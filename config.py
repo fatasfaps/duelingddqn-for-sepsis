@@ -18,7 +18,7 @@ TEMPERATURE = 0.5
 # =========================
 LAMBDA1 = 0.1
 LAMBDA2 = 0.05
-BETA_KL = 0.001
+BETA_KL = 0.001 # Manipulable, independent variable
 
 # =========================
 # Training
