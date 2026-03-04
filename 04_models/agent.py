@@ -90,25 +90,23 @@ class DuelingDDQNAgent:
         # =========================
         # 3. KL Regularization
         # =========================
-
+        # --- Target Policy π(a|s)
         log_pi = F.log_softmax(Q_eval / self.temperature, dim=1)
-
+        pi = torch.exp(log_pi)
+    
+        # --- Behavior Policy b(a|s)
         state_np = state.detach().cpu().numpy()
-        b_prob_np = get_behavior_prob(
-            state_np, self.num_actions, model, scaler
-        )
-
+        b_prob_np = get_behavior_prob(state_np, self.num_actions, model, scaler)
+    
         b_prob = torch.tensor(
-            b_prob_np, dtype=torch.float32, device=self.device
+            b_prob_np, dtype=torch.float32, device=state.device
         )
-
+    
         b_prob = torch.clamp(b_prob, min=1e-8)
-
-        KL_loss = F.kl_div(
-            log_pi,
-            b_prob,
-            reduction="batchmean"
-        )
+        log_b = torch.log(b_prob)
+    
+        # --- KL(π || b)
+        KL_loss = torch.sum(pi * (log_pi - log_b), dim=1).mean()
 
         # =========================
         # 4. Total Loss
