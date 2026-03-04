@@ -1,4 +1,4 @@
-##<b>04_models</b>
+##04_models
 
 Reinforcement Learning module for offline policy learning and evaluation on the constructed ICU Markov Decision Process (MDP).
 
