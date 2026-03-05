@@ -5,13 +5,13 @@
 
 This repository contains the implementation of my bachelor’s thesis defense project. It develops a clinical decision support system using **MIMIC-III v1.4** to optimize IV fluid and vasopressor administration for septic patients through a **Dueling Double Deep Q-Network (DDQN)** framework.
 
-## 📌 Project Overview
+## Project Overview
 
 Sepsis treatment requires precise, dynamic interventions. This project models the clinical decision-making process as a Markov Decision Process (MDP) and applies **Offline Reinforcement Learning** to learn optimal policies from historical ICU data. Unlike traditional RL, this approach does not require a simulator, learning instead from fixed clinician trajectories.
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 
 The project is organized into modular stages, following the end-to-end pipeline of clinical AI research:
 
@@ -47,6 +47,14 @@ Since live interaction is impossible, we utilize statistical estimators to valid
    ```bash
    cd 04_models
    python train.py
+
+---
+
+## Acknowledgments & Credits
+
+This project builds upon the foundational work of **Matthieu Komorowski** regarding the "AI Clinician." Specifically:
+* The data extraction logic in `01_extraction/` and cohort definition in `02_cohort/` are modified versions of the original [AI Clinician repository](https://github.com/matthieukomorowski/AI_Clinician).
+
 
 ---
 ## Disclaimer 
