@@ -40,14 +40,22 @@ Since live interaction is impossible, we utilize statistical estimators to valid
 
 ## Getting Started
 
-1. **Extraction:** Use the SQL scripts in `01_extraction` to pull data from a PostgreSQL instance of MIMIC-III.
-2. **Cohort & MDP:** Run the notebooks in `02_cohort` and `03_mdp` sequentially to generate the transition matrix.
-3. **Training:**
+1. **Prerequisites:**
+   - Access to [MIMIC-III v1.4](https://physionet.org/content/mimiciii/1.4/) on **Google BigQuery**.
+   - A Google Cloud Project with the BigQuery API enabled.
+   - Authentication via `gcloud auth application-default login` or a service account key.
+
+2. **Extraction & Cohort:**
+   - Execute the SQL scripts in `01_extraction`. These are optimized for **BigQuery standard SQL**.
+   - Run the notebooks in `01_extraction` and `02_cohort` to process the raw clinical data.
+
+3. **MDP Construction:**
+   - Follow the steps in `03_mdp` to transform the clinical data into a state-action-reward format.
+
+4. **Training the Agent:**
    ```bash
    cd 04_models
    python train.py
-
----
 
 ## Acknowledgments & Credits
 
