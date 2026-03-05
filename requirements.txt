@@ -1,1 +1,19 @@
+# --- Data Extraction (BigQuery) ---
+google-cloud-bigquery>=3.10.0
+db-dtypes>=1.1.0
+google-auth>=2.20.0
 
+# --- Data Processing ---
+pandas>=1.5.3
+numpy>=1.24.0
+scikit-learn>=1.2.0
+scipy>=1.10.0
+
+# --- Modeling (RL & Deep Learning) ---
+torch>=2.0.0
+tqdm>=4.65.0
+
+# --- Visualization ---
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
