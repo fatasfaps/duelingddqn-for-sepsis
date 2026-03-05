@@ -42,9 +42,9 @@ The repository is organized into five sequential stages. Each folder represents 
 
 ## Inter-Module Dependencies
 
-1. All modules in `04_models` and `05_results` depend on the central `config.py` for dimensions and hyperparameters.
-2. The NumPy arrays produced in `03_mdp` are the direct input for the `SepsisDataset` loader in `04_models/utils.py`.
-3. The `DuelingDDQNAgent` requires the weights from the `MlpBehaviorPolicy` (trained in `04_models`) to calculate the KL-penalty during the RL phase.
+1. All modules in `04_models` and `05_results` import the central `config.py` to synchronize hyperparameters (e.g., `BETA_KL`, `GAMMA`) and architecture dimensions (`STATE_DIM`, `NUM_ACTIONS`).
+2. The NumPy arrays produced in `03_mdp` are loaded directly via `utils.load_numpy_data()`. Instead of using heavy DataLoaders, the training loop utilizes `utils.get_batch()` to sample transitions and convert them to PyTorch tensors on-the-fly, significantly minimizing memory overhead.
+3. The `DuelingDDQNAgent` requires a pre-trained `MlpBehaviorPolicy` (from `04_models`) to calculate the KL-divergence penalty during the reinforcement learning phase, ensuring clinical safety.
 
 ---
 
