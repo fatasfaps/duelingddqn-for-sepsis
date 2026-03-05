@@ -1,0 +1,15 @@
+# Credentials
+*.json
+.env
+
+# Data & Models (Large files)
+*.csv
+*.pkl
+*.pt
+*.pth
+checkpoints/
+
+# Python/OS
+__pycache__/
+.DS_Store
+.ipynb_checkpoints/
