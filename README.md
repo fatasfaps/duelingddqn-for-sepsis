@@ -1,7 +1,6 @@
 # Offline Reinforcement Learning for Sepsis Management: A Dueling Double Deep Q-Network Approach
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 This repository contains the implementation of my bachelor’s thesis defense project. It develops a clinical decision support system using **MIMIC-III v1.4** to optimize IV fluid and vasopressor administration for septic patients through a **Dueling Double Deep Q-Network (DDQN)** framework.
 
