@@ -57,6 +57,8 @@ Since live interaction is impossible, we utilize statistical estimators to valid
    cd 04_models
    python train.py
 
+---
+
 ## Acknowledgments & Credits
 
 This project builds upon the foundational work of Dr Matthieu Komorowski, Imperial College London (2019) regarding the "AI Clinician." Specifically, the data extraction logic in `01_extraction/` and cohort definition in `02_cohort/` are modified versions of the original [AI Clinician repository](https://github.com/matthieukomorowski/AI_Clinician).
