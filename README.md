@@ -19,7 +19,7 @@ The project is organized into modular stages, following the end-to-end pipeline 
 * **`02_cohort/`**: Definition of the [Sepsis-3 cohort](02_cohort/sepsis3.md) and data cleaning.
 * **`03_mdp/`**: MDP construction including [State, Action, and Reward design](03_mdp/mdp.md).
 * **`04_models/`**: Core RL module containing the [Dueling DDQN agent](04_models/README.md), behavior modeling, and OPE logic.
-* **`05_results/`**: Training logs, [summary of findings](05_results/summary.md), and global [config.py](05_results/config.py).
+* **`05_results/`**: Training logs and [summary of findings](05_results/summary.md).
 
 ---
 
